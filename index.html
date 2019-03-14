@@ -1,1 +1,22 @@
-Hello, git~ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function setTitle(){
+            var title = document.getElementById('title').value;
+            document.getElementById('content').innerHTML ='<h1>'+title+'</h1>'; 
+        }
+    </script>
+</head>
+<body>
+    <p>
+        <input type="text" id="title">
+        <button onclick="setTitle()">顯示文字</button>     
+    </p>
+    <span id="content"></span>
+</body>
+</html>
