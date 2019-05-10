@@ -1,39 +1,55 @@
 var apiData = '';
 function getData(){
+    var hasData = $('#record tr').length >=1;
+    if(hasData){
+        return;
+    }
     var url = 'https://api.kcg.gov.tw/api/service/get/4eba94e0-323c-4530-95a6-dd276bd8765d';
     $.get(url,'', function(data){
         apiData = data;
         var strHtml ='';
         $.each(data, function(index, element) {
             if(index == 'data'){
-                var data = element[index];               
+                var data = element[index];  
+                strHtml +='<tr>'  
+                strHtml +='<th>車站代碼</th>' 
+                strHtml +='<th>車站中文站名</th>' 
+                strHtml +='<th>站位地點</th>' 
+                strHtml +='</tr>'            
                 for(var key in data){
-                    strHtml +='車站代碼 :'+data[key]['車站代碼']+" , 車站中文站名 : "+data[key]['車站中文站名'];
-                    strHtml +=' , 站位地點 :'+data[key]['站位地點']+ "\r\n";
+                    strHtml += '<tr id='+key+'>'
+                    strHtml += '<td>'+data[key]['車站代碼']+'</td>'
+                    strHtml += '<td>'+data[key]['車站中文站名']+'</td>'
+                    strHtml += '<td>'+data[key]['站位地點']+'</td>'
+                    strHtml += '</tr>'
                 }
             }     
         });
-        $('#content').html(strHtml);
+        $('#record').append(strHtml);
     });
 }
 
 function clearData(){
-    $('#content').html('');
-    $('#content').css("color", "");
+    $('#record').html('');
+    $('#record').css("color", "");
+    $("#textColor").val('');
 }
 
 function changeColor(){
-    var hasData = $('#content').val().length >=1;
+    var hasData = $('#record tr').length >=1;
     if(hasData){
-        $('#content').css("color", "red");
-    }
-   
+        var colorId = $("#textColor").val();
+        $('#record').css("color", colorId);        
+    }else{
+        alert("請先取得資料!");
+        $("#textColor").val('');
+    }   
 }
 
-function saveLocalStorage(){
-    localStorage.setItem('data', JSON.stringify(apiData));
+function saveSessionStorage(){
+    sessionStorage.setItem('data', JSON.stringify(apiData));
 }
 
-function deleteLocalStorage(){
-    localStorage.removeItem('data');
+function deleteSessionStorage(){
+    sessionStorage.removeItem('data');
 }
