@@ -1,6 +1,8 @@
+var apiData = '';
 function getData(){
     var url = 'https://api.kcg.gov.tw/api/service/get/4eba94e0-323c-4530-95a6-dd276bd8765d';
     $.get(url,'', function(data){
+        apiData = data;
         var strHtml ='';
         $.each(data, function(index, element) {
             if(index == 'data'){
@@ -28,3 +30,10 @@ function changeColor(){
    
 }
 
+function saveLocalStorage(){
+    localStorage.setItem('data', JSON.stringify(apiData));
+}
+
+function deleteLocalStorage(){
+    localStorage.removeItem('data');
+}
