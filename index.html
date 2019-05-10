@@ -11,12 +11,17 @@
 </head>
 <body>
     <div id=funBtn>
-        <button onclick="getData()">Get</button>
         <button onclick="clearData()">Clear</button>
-        <button onclick="changeColor()">ChangeColor</button>
-        <button onclick="saveLocalStorage()">Save_localStorage</button>
-        <button onclick="deleteLocalStorage()">Delete_localStorage</button>
+        <button onclick="getData()">Get_Data</button>    
+        <select id="textColor" onchange="changeColor()">
+            <option value="">choose Text color</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+        <button onclick="saveSessionStorage()">Save_SessionStorage</button>
+        <button onclick="deleteSessionStorage()">Delete_SessionStorage</button>
     </div>  
-    <textarea id="content" cols="85" rows="18"></textarea>  
+    <table id="record"></table>
 </body>
 </html>
