@@ -11,6 +11,7 @@ function getData(){
         $.each(data, function(index, element) {
             if(index == 'data'){
                 var data = element[index];  
+                strHtml +='<table>'  
                 strHtml +='<tr>'  
                 strHtml +='<th>車站代碼</th>' 
                 strHtml +='<th>車站中文站名</th>' 
@@ -23,6 +24,7 @@ function getData(){
                     strHtml += '<td>'+data[key]['站位地點']+'</td>'
                     strHtml += '</tr>'
                 }
+                strHtml +='</table>'
             }     
         });
         $('#record').append(strHtml);
