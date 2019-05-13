@@ -1,9 +1,6 @@
 ﻿var apiData = '';
 function getData(){
-    // var hasData = $('#record tr').length >=1;
-    // if(hasData){
-    //     return;
-    // }
+
     var url = 'https://api.kcg.gov.tw/api/service/get/4eba94e0-323c-4530-95a6-dd276bd8765d';
     $.get(url,'', function(data){
         apiData = data;
