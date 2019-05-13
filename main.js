@@ -1,4 +1,4 @@
-var apiData = '';
+﻿var apiData = '';
 function getData(){
     // var hasData = $('#record tr').length >=1;
     // if(hasData){
