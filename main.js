@@ -51,3 +51,11 @@ function saveSessionStorage(){
 function deleteSessionStorage(){
     sessionStorage.removeItem('data');
 }
+
+function saveLocalStorage(){
+    localStorage.setItem('data', JSON.stringify(apiData));
+}
+
+function deleteLocalStorage(){
+    localStorage.removeItem('data');
+}
