@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script src="js/main.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
+    <script src="./js/login.js"></script>
+    <title>Login</title>
 </head>
 <body>
-    <div id=funBtn>
-        <button onclick="clearData()">Clear</button>
-        <button onclick="getData()">Get_Data</button>    
-        <select id="textColor" onchange="changeColor()">
-            <option value="">choose Text color</option>
-            <option value="red">Red</option>
-            <option value="green">Green</option>
-            <option value="blue">Blue</option>
-        </select>
-        <button onclick="saveSessionStorage()">Save_SessionStorage</button>
-        <button onclick="deleteSessionStorage()">Delete_SessionStorage</button>
-    </div>  
-    <div id="record"></div>
+    <div class="loginbox">
+        <img src="./img/login.png" class="login">
+        <h1>Login Here</h1>
+        <form>
+            <p>UserName</p>
+            <input id="name" type="text" name="" placeholder="Enter username">
+            <p>Password</p>
+            <input id="password" type="password" name="" placeholder="Enter password">
+            <input type="button" name="" value="Login" onclick="login()">
+            <span class="error" id="msg"></span>
+            <a href="#" onclick="getUserInfo()">Don't have a account and password ?</a><br>
+            <span class="info" id="accountInfo"></span>
+        </form>
+    </div>
+    <footer class="footer">
+        <p>image:http://shorturl.at/eqrG5</p>
+    </footer>
 </body>
 </html>

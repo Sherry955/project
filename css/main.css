@@ -1,18 +1,26 @@
-body{    
-    text-align:center;
+body{
+    background: url(../img/bg.jpg);
+    background-repeat:no-repeat;
+    font-family: sans-serif;
+    background-position:70% 15%;
+}
+.footer{
+    right: 0;
+    bottom: 0;
+    color:rgb(109, 109, 109); 
+    text-align: center;
+    font-size: 12px;
+    position: fixed; 
 }
 
-#funBtn{
-    padding:15px 20px;
+h1{
+    top:20%;
+    left: 30%;
+    position: absolute;
 }
 
-#content{
-    margin: 0px auto;
-    width: 800px;
-    height: 250px;
+h2{
+    top:30%;
+    left: 30%;
+    position: absolute;
 }
-
-table, th, td {
-    margin: 0px auto;  
-    border: 1px solid black;
-  }
