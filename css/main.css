@@ -3,6 +3,7 @@ body{
     background-repeat:no-repeat;
     font-family: sans-serif;
     background-position:70% 15%;
+    background-size: Cover ;
 }
 .footer{
     right: 0;
